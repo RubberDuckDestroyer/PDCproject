@@ -1,0 +1,93 @@
+$forests
+3
+$startforest
+$rooms
+4
+$start
+$desc
+The lush green forest is alive, with birds chriping and the river flowing...A field of flowers lies ahead, "I should pick the folwers", says the princess in her head.
+$connect
+2
+$flower
+10
+$-
+$desc
+You tread the to enter a secluded part of the Great Green Forest... 
+$connect
+1 4
+$connectr
+3
+$monster
+golem 35 0.9
+$flowerdrop
+7
+$-
+$desc
+A lot of bushes lay ahead... 
+$connectl
+2
+$monster
+golem 35 0.98
+$flowerdrop
+7
+$flower
+10
+$-
+$desc
+A bridge can be seen in the distance...
+$connect
+forest
+$monster
+golem 35 0.8
+$flowerdrop
+7
+$end
+$rooms
+3
+$start
+$desc
+The bridge shakes as the air blows through...
+$connect
+2
+$monster
+geothern 75 0.95
+$flowerdrop
+10
+$-
+$desc
+You cross the bridge and you find a dark cave in front of you...
+$connect
+1 forest
+$connectl
+3
+$monster
+geothern 75 0.95
+$flowerdrop
+10
+$-
+$desc
+A garden of flowerslays in the beautiful space between the cave and the forest....
+$connectr
+2
+$flower
+30
+$end
+$rooms
+2
+$start
+$desc
+Walking through the cave you see the world around you eerily change. Behold! The dark forest!!
+$connect
+2
+$food
+salad 30
+$-
+$final
+$desc
+The mist clears up, revealing the final room... 
+$connect
+1
+$monster
+dragon 350 1.0
+$endquest
+$end
