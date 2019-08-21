@@ -22,19 +22,6 @@ public class DualSword extends Sword
 
     
     //class  methods 
-    @Override
-    public int dealMonsterDamage(int monsterDamage) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int dealDragonDamage(int DragonDamage) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int flowerDecrease(int flowerDropMultiplier) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }

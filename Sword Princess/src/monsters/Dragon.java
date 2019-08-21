@@ -6,6 +6,7 @@
 package monsters;
 
 import characters.Monster;
+import characters.Princess;
 
 /**
  *
@@ -15,14 +16,14 @@ public class Dragon extends Monster
 {
     
     //class constructor 
-    public Dragon(String description, String name, int damage, int flowerChange, double probAppear) {
-        super(description, name, damage, flowerChange, probAppear);
+    public Dragon(String description, String name, int damage, int flowerChange, double probAppear, int health) {
+        super(description, name, health, damage, flowerChange, probAppear);
     }
 
     
     //class methods
     @Override
-    public int IncreaseFlower(int flowerChange) 
+    public int IncreaseFlower(int flowerDrop, Princess player) 
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

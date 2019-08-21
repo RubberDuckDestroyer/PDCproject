@@ -50,13 +50,14 @@ public abstract class Sword extends Entity {
      * 
      */
     
-    
+    /*
     public abstract int dealMonsterDamage(int monsterDamage);
-    
+    int monsterDamage
     public abstract int dealDragonDamage(int DragonDamage);
     
      /**
      * This method multiples the amount of flowers as a consequence of killing the monster 
-     */
+     
     public abstract int flowerDecrease(int flowerDropMultiplier);
+    */
 }

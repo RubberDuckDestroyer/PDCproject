@@ -5,6 +5,7 @@
 package monsters;
 
 import characters.Monster;
+import characters.Princess;
 
 /**
  * * This class represents one of the monster characters that will attack the princess
@@ -18,16 +19,16 @@ public class Golem extends Monster
 
 
     //class constructor 
-    public Golem(String description, String name, int damage, int flowerChange, double probAppear)
+    public Golem(String description, String name, int damage, int flowerChange, double probAppear, int health)
     {
-        super(description, name, damage, flowerChange, probAppear);
+        super(description, name, health, damage, flowerChange, probAppear);
     }
    
     
     
     //class methods 
     @Override
-    public int IncreaseFlower(int flowerChange) 
+    public int IncreaseFlower(int flowerDrop, Princess p) 
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

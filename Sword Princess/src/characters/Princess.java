@@ -9,6 +9,6 @@ package characters;
  *
  * @author hitar
  */
-public class Player {
+public class Princess {
     
 }

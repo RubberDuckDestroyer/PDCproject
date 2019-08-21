@@ -15,9 +15,15 @@ public class Forest extends Entity
 {
     private Room[] rooms;
     private int numberOfRooms;
-
+    private boolean isStartforest;
+    private boolean isEndforest;
+    
     public Forest(String description) {
         super(description);
+        this.numberOfRooms = 0;
+        this.rooms = null;
+        this.isEndforest = false;
+        this.isStartforest = false;
     }
 
     public Room[] getRooms() {
@@ -34,6 +40,22 @@ public class Forest extends Entity
 
     public void setNumberOfRooms(int numberOfRooms) {
         this.numberOfRooms = numberOfRooms;
+    }
+
+    public boolean isIsStartforest() {
+        return isStartforest;
+    }
+
+    public void setIsStartforest(boolean isStartforest) {
+        this.isStartforest = isStartforest;
+    }
+
+    public boolean isIsEndforest() {
+        return isEndforest;
+    }
+
+    public void setIsEndforest(boolean isEndForest) {
+        this.isEndforest = isEndForest;
     }
     
     

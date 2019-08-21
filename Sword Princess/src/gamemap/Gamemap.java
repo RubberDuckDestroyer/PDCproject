@@ -9,7 +9,7 @@ import entities.Entity;
  *
  * @author hitar
  */
-public class Map extends Entity {
+public class Gamemap extends Entity {
     
     private int numberOfForests;
     private Forest[] forests;
@@ -30,8 +30,10 @@ public class Map extends Entity {
         this.forests = forests;
     }
     
-    public Map(String description) {
+    public Gamemap(String description) {
         super(description);
+        this.numberOfForests = 0;
+        this.forests = null;
     }
     
 }
