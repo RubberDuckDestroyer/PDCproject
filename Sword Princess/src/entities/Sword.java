@@ -1,18 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class is the general type of sord
+ * 
+ * 
  */
 package entities;
 
 /**
  *
- * @author hitar
+ * @author  Patricia Virgen  and  Hitarth Asrani   
  */
 public abstract class Sword extends Entity {
     
     protected double flowerDropMultiplier;
-    protected int golemDamage;
+    protected int monsterDamage; //both Geothern and Golem have the same damage 
     protected int dragonDamage;
     
     public Sword(String description) 
@@ -28,12 +28,12 @@ public abstract class Sword extends Entity {
         this.flowerDropMultiplier = flowerDropMultiplier;
     }
 
-    public int getGolemDamage() {
-        return golemDamage;
+    public int getMonsterDamage() {
+        return monsterDamage;
     }
 
-    public void setGolemDamage(int golemDamage) {
-        this.golemDamage = golemDamage;
+    public void setMonsterDamage(int golemDamage) {
+        this.monsterDamage = golemDamage;
     }
 
     public int getDragonDamage() {
@@ -44,4 +44,19 @@ public abstract class Sword extends Entity {
         this.dragonDamage = dragonDamage;
     }
     
+    /***the following methods will be implemented by the subclasses 
+     * which are the other types of swords
+     * 
+     * 
+     */
+    
+    
+    public abstract int dealMonsterDamage(int monsterDamage);
+    
+    public abstract int dealDragonDamage(int DragonDamage);
+    
+     /**
+     * This method multiples the amount of flowers as a consequence of killing the monster 
+     */
+    public abstract int flowerDecrease(int flowerDropMultiplier);
 }
