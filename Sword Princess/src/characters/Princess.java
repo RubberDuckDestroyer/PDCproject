@@ -32,7 +32,8 @@ public class Princess
         this.health = health;
         this.currentNumOfFlowers = currentNumOfFlower;
         this.isDefeated = false;
-        this.currentSword = new DefaultSword("default sowrd");
+        //TODO: Add default sword from weaponmenu
+        this.currentSword = null;
         this.inventory = new Inventory();
     }
 
