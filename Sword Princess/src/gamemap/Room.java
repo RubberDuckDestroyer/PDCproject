@@ -192,7 +192,7 @@ public class Room extends Entity
                
                out = "The previous room is: room"+ previousRoom+". ";
                if(nextRoom == Connect.forest)
-                {
+               {
                     out+="A forest lies ahed, type \'connect forest\' to move to the next level. You cannot turn back once you switch forests.";
                 }
                 else
