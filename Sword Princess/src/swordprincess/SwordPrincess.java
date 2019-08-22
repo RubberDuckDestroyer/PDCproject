@@ -323,7 +323,7 @@ public class SwordPrincess
         
         System.out.println("Hello! It's Sword Princress!");
         SwordPrincess game = WorldGenerator.newWorld();
-        Princess player = new Princess("Miranda", 100, 0);
+        Princess player = new Princess("Miranda", 100, 0, game.gameMenu.getDefaultSword());
         game.setPlayer(player);
         game.play(player);
         

@@ -7,7 +7,7 @@ $start
 $desc
 The lush green forest is alive, with birds chriping and the river flowing...A field of flowers lies ahead, "I should pick the folwers", says the princess in her head. Type help for commands!
 $flowers
-100
+10
 $connect
 two
 $dash

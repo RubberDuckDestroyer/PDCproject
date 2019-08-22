@@ -27,14 +27,13 @@ public class Princess
     private int currentForest;
     private WeaponMenu menu;
     //class constructor
-    public Princess(String name, int health, int currentNumOfFlower)
+    public Princess(String name, int health, int currentNumOfFlower, Sword startSword)
     {   
         this.name = name;
         this.health = health;
         this.currentNumOfFlowers = currentNumOfFlower;
         this.isDefeated = false;
-        //TODO: Add default sword from weaponmenu
-        this.currentSword = new DefaultSword(5, 25, 25, true, "default");
+        this.currentSword = startSword;
         this.inventory = new Inventory();
         this.setCurrentForest(0);
         this.setCurrentRoom(0);
