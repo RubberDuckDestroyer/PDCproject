@@ -11,9 +11,15 @@ package weaponmenu;
  */
 public enum WeaponType 
 {
-    defaultSword,
-    fireSword,
-    waterSword,
-    dualSword,
-    dragonSword;
+    defaultsword,
+    firesword,
+    watersword,
+    dualsword,
+    dragonsword;
+        
+    public static WeaponType readLine(String line)
+    {
+        line = line.replace("$","").toLowerCase();
+        return WeaponType.valueOf(line);
+    }
 }

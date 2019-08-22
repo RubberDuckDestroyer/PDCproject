@@ -11,25 +11,24 @@ package entities;
  */
 public abstract class Sword extends Entity {
     
-    protected double flowerDropMultiplier;
+    protected int flowerDropMultiplier;
     protected int monsterDamage; //both Geothern and Golem have the same damage 
     protected int dragonDamage;
     protected boolean isPurchased;
-    
-    public Sword(String description) 
-    {
+
+    public Sword(int flowerDropMultiplier, int monsterDamage, int dragonDamage, boolean isPurchased, String description) {
         super(description);
-        this.flowerDropMultiplier = 0.0;
-        this.dragonDamage = 0;
-        this.monsterDamage = 0;
-        this.isPurchased = false;
+        this.flowerDropMultiplier = flowerDropMultiplier;
+        this.monsterDamage = monsterDamage;
+        this.dragonDamage = dragonDamage;
+        this.isPurchased = isPurchased;
     }
-    
-    public double getFlowerDropMultiplier() {
+
+    public int getFlowerDropMultiplier() {
         return flowerDropMultiplier;
     }
 
-    public void setFlowerDropMultiplier(double flowerDropMultiplier) {
+    public void setFlowerDropMultiplier(int flowerDropMultiplier) {
         this.flowerDropMultiplier = flowerDropMultiplier;
     }
 

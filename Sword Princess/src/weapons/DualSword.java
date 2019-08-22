@@ -10,15 +10,11 @@ import entities.Sword;
 
 public class DualSword extends Sword
 {
-    
-   //class instance variables
-    
-    
-    //class constructors
 
-    public DualSword(String description) {
-        super(description);
+    public DualSword(int flowerDropMultiplier, int monsterDamage, int dragonDamage, boolean isPurchased, String description) {
+        super(flowerDropMultiplier, monsterDamage, dragonDamage, isPurchased, description);
     }
+    
 
     
     //class  methods 

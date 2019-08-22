@@ -1,19 +1,12 @@
 $swords
 5
-$start
-$default
+$defaultsword
 25 25 5 0
-$-
-$fire
+$firesword
 35 35 2 20
-$-
-$water
+$watersword
 25 25 10 40
-$-
-$dual
+$dualsword
 50 19 7 50
-$-
-$dragon
+$dragonsword
 15 70 7 80
-$-
-$end
