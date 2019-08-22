@@ -13,6 +13,7 @@ import monsters.Dragon;
 import monsters.Geothern;
 import monsters.Golem;
 import gamemap.*;
+import weaponmenu.WeaponMenuGenerator;
 
 /**
  * This class is the Data reader class for the main game.
@@ -43,7 +44,8 @@ public class WorldGenerator
         finalroom,
         startforest,
         dash,
-        endquest;
+        endquest,
+        flowers;
         
         public static WorldDataTag readLine(String line)
         {
@@ -166,6 +168,10 @@ public class WorldGenerator
                         rooms[currentRoom].setIsFinalGameRoom(true);
                         loadingRoomsCompleted = true;
                         break;
+                    case flowers:
+                        int numberOfFLowers = new Integer(fileReader.nextLine());                
+                        rooms[currentRoom].addFlowersToRoom(numberOfFLowers);
+                        break;
                 }
                 
             }while(!loadingRoomsCompleted);
@@ -204,7 +210,7 @@ public class WorldGenerator
             return m;
         }
         
-        private static SwordPrincess loadWorld(String path) throws IOException
+        private static Gamemap loadWorld(String path) throws IOException
         {
             Scanner fileReader = new Scanner(new File(path));
             
@@ -221,23 +227,26 @@ public class WorldGenerator
             fileReader.close();
             
             
-            return null;
+            return map;
         }
         public static SwordPrincess newWorld()
         {
+            Gamemap map = new Gamemap("map");
             String path = worldDataPath;
             try
             {
-                return WorldGenerator.loadWorld(path);
+                map = WorldGenerator.loadWorld(path);
+                WeaponMenuGenerator.readWeaponData();
+                
+            // Might need to change this to return read world based on params
+                
             } catch (IOException ioe)
             {
                 System.err.println("ERROR: File not found! Path: "+ path );
                 System.out.println("Searching in: " + new File(path).getAbsolutePath());
                 ioe.printStackTrace();
             }
-            
-            // Might need to change this to return read world based on params
-            return null;
+             return new SwordPrincess( map, WeaponMenuGenerator.getMenu());
         }
         
     //Getters and Setters

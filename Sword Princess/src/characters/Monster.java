@@ -87,11 +87,25 @@ public abstract class Monster extends Entity
         this.isDefeated = isDefeated;
     }
     
-    protected int defendAttack(Princess player)
+    public int defendAttack(Princess player)
     {
         int playerDamage = player.getCurrentSword().getMonsterDamage();
         this.setHealth(this.getHealth() - playerDamage);
         return playerDamage;
+    }
+    
+    public boolean appears()
+    {
+        boolean prob;
+        if(this.isDefeated)
+        {
+            prob = false;
+        }
+        else{
+            int random = super.getRandom(0, 101);
+            prob = (random < this.getProbAppear()*100);
+        }
+        return prob;
     }
     //class methods
     /**

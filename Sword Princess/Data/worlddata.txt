@@ -53,7 +53,9 @@ $monster
 geothern 75 17 0.95 10
 $dash
 $desc
-A garden of flowerslays in the beautiful space between the cave and the forest....
+A garden of flowers lays in the beautiful space between the cave and the forest....
+$flowers
+50
 $connectr
 two
 $dash

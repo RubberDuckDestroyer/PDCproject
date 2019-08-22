@@ -62,7 +62,13 @@ public class WeaponMenu
             
     }
 
-    public void buyWeapon()
+    public Sword getDefaultSword()
+    {
+        return swordList.get(0);
+        
+    }
+    
+    public void buyWeapon(int weaponNumber)
     {
         
     }

@@ -8,6 +8,7 @@ package characters;
 import entities.Sword;
 import entities.Flower;
 import swordprincess.Inventory;
+import weaponmenu.WeaponMenu;
 import weapons.DefaultSword;
 /**
  *
@@ -17,24 +18,26 @@ public class Princess
 {
     //instance variables 
     private String name;
-    private int damage;
     private int health;
     private Sword currentSword;
     private Inventory inventory; 
     private int currentNumOfFlowers;
     private boolean isDefeated;
-    
+    private int currentRoom;
+    private int currentForest;
+    private WeaponMenu menu;
     //class constructor
-    public Princess(String name,int damage, int health, int currentNumOfFlower)
+    public Princess(String name, int health, int currentNumOfFlower)
     {   
         this.name = name;
-        this.damage = damage;
         this.health = health;
         this.currentNumOfFlowers = currentNumOfFlower;
         this.isDefeated = false;
         //TODO: Add default sword from weaponmenu
-        this.currentSword = null;
+        this.currentSword = new DefaultSword(5, 25, 25, true, "default");
         this.inventory = new Inventory();
+        this.setCurrentForest(0);
+        this.setCurrentRoom(0);
     }
 
     public String getName() {
@@ -43,10 +46,6 @@ public class Princess
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
     }
 
     public int getHealth() {
@@ -97,6 +96,22 @@ public class Princess
     public void setIsDefeated(boolean isDefeated) {
         this.isDefeated = isDefeated;
     }
+
+    public int getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(int currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
+    public int getCurrentForest() {
+        return currentForest;
+    }
+
+    public void setCurrentForest(int currentForest) {
+        this.currentForest = currentForest;
+    }
     
     
     //class methods 
@@ -124,6 +139,12 @@ public class Princess
         this.currentNumOfFlowers += numOfFlowers;
         this.health += (numOfFlowers*f.getHealthRestored());
         
+    }
+    
+    @Override
+    public String toString()
+    {
+        return this.getName();
     }
 }
 

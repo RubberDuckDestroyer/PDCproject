@@ -21,7 +21,7 @@ public class Dragon extends Monster
     }
     
     @Override
-    protected int defendAttack(Princess player)
+    public int defendAttack(Princess player)
     {
         int playerDamage = player.getCurrentSword().getDragonDamage();
         this.setHealth(this.getHealth() - playerDamage);
@@ -33,7 +33,7 @@ public class Dragon extends Monster
     {
         if(this.isDefeated)
         {
-            //Method for turning into cat.
+            System.out.println("Congratulations, you defeated the dragon and it turned into a pet cat. Sword Princess can now go home with her pet cat!");
         }
     }
     //class methods
