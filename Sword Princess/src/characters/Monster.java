@@ -17,7 +17,7 @@ public abstract class Monster extends Entity
     public int damage;
     public int flowerDrop;
     public int health;
-    public  double probAppear;
+    public double probAppear;
     public boolean isDefeated;
     //class constructor
     /**Every monster must contain the following:
@@ -31,9 +31,68 @@ public abstract class Monster extends Entity
         this.probAppear = probAppear;
         this.health = health;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getFlowerDrop() {
+        return flowerDrop;
+    }
+
+    public void setFlowerDrop(int flowerDrop) {
+        this.flowerDrop = flowerDrop;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        if(health <=0)
+        {
+            this.setIsDefeated(true);
+            //Drop flower?
+        }
+        else{
+            this.health = health;
+        }
+    }
+
+    public double getProbAppear() {
+        return probAppear;
+    }
+
+    public void setProbAppear(double probAppear) {
+        this.probAppear = probAppear;
+    }
+
+    public boolean isIsDefeated() {
+        return isDefeated;
+    }
+
+    public void setIsDefeated(boolean isDefeated) {
+        this.isDefeated = isDefeated;
+    }
     
-    
-    
+    protected int defendAttack(Princess player)
+    {
+        int playerDamage = player.getCurrentSword().getMonsterDamage();
+        this.setHealth(this.getHealth() - playerDamage);
+        return playerDamage;
+    }
     //class methods
     /**
      * This method Increases the amount of flowers as a consequence of killing the monster 

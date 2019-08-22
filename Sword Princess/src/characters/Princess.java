@@ -5,10 +5,124 @@
  */
 package characters;
 
+import entities.Sword;
+import entities.Flower;
+import swordprincess.Inventory;
+import weapons.DefaultSword;
 /**
  *
- * @author hitar
+ * @author Patricia Virgen and Hitarth Asrani
  */
-public class Princess {
+public class Princess  
+{
+    //instance variables 
+    private String name;
+    private int damage;
+    private int health;
+    private Sword currentSword;
+    private Inventory inventory; 
+    private int currentNumOfFlowers;
+    private boolean isDefeated;
     
+    //class constructor
+    public Princess(String name,int damage, int health, int currentNumOfFlower)
+    {   
+        this.name = name;
+        this.damage = damage;
+        this.health = health;
+        this.currentNumOfFlowers = currentNumOfFlower;
+        this.isDefeated = false;
+        this.currentSword = new DefaultSword("default sowrd");
+        this.inventory = new Inventory();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        if(health <=0)
+        {
+            // Princess defeated
+            this.setIsDefeated(true);
+            
+        }
+        else
+        {
+            this.health = health;
+        }
+    }
+
+    public Sword getCurrentSword() {
+        return currentSword;
+    }
+
+    public void setCurrentSword(Sword currentSword) {
+        this.currentSword = currentSword;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public int getCurrentNumOfFlowers() {
+        return currentNumOfFlowers;
+    }
+
+    public void setCurrentNumOfFlowers(int currentNumOfFlowers) {
+        this.currentNumOfFlowers = currentNumOfFlowers;
+    }
+
+    public boolean isIsDefeated() {
+        return isDefeated;
+    }
+
+    public void setIsDefeated(boolean isDefeated) {
+        this.isDefeated = isDefeated;
+    }
+    
+    
+    //class methods 
+    /**
+    *This method will be called when the princess attacks the monster
+    * if she wins the number of flowers will increase, and as consequence her health points too
+    * else she will have her number of flowers decreased, her health too and if it is 0 she will die the game exits?
+    **/
+    public int defendAttack(Monster m)
+    {
+        int monsterDamage = m.getDamage();
+        this.setHealth(this.getHealth() - monsterDamage);
+        
+        return monsterDamage;
+    }
+    
+    
+    /**
+    *This method assists the princes with collecting the flowers after wining/loosing 
+    *
+    **/
+    public void pickUpFlower(int numOfFlowers)
+    {
+        Flower f = new Flower("flower");
+        this.currentNumOfFlowers += numOfFlowers;
+        this.health += (numOfFlowers*f.getHealthRestored());
+        
+    }
 }
+

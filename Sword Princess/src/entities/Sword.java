@@ -14,10 +14,15 @@ public abstract class Sword extends Entity {
     protected double flowerDropMultiplier;
     protected int monsterDamage; //both Geothern and Golem have the same damage 
     protected int dragonDamage;
+    protected boolean isPurchased;
     
     public Sword(String description) 
     {
         super(description);
+        this.flowerDropMultiplier = 0.0;
+        this.dragonDamage = 0;
+        this.monsterDamage = 0;
+        this.isPurchased = false;
     }
     
     public double getFlowerDropMultiplier() {
@@ -43,6 +48,15 @@ public abstract class Sword extends Entity {
     public void setDragonDamage(int dragonDamage) {
         this.dragonDamage = dragonDamage;
     }
+
+    public boolean isIsPurchased() {
+        return isPurchased;
+    }
+
+    public void setIsPurchased(boolean isPurchased) {
+        this.isPurchased = isPurchased;
+    }
+    
     
     /***the following methods will be implemented by the subclasses 
      * which are the other types of swords

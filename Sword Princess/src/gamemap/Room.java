@@ -7,6 +7,7 @@ package gamemap;
 
 import characters.Monster;
 import entities.Entity;
+import entities.Flower;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +18,7 @@ public class Room extends Entity
 {
     private ArrayList<Monster> monsters;
     private ArrayList<Connect> connecting;
+    private ArrayList<Flower> flowers;
     private Connect connectRight;
     private Connect connectLeft;
     private Forest ownForest;
@@ -35,6 +37,7 @@ public class Room extends Entity
         this.monsters = new ArrayList<Monster>();
         this.connecting = new ArrayList<Connect>();
         this.description = "";
+        this.flowers = new ArrayList<Flower>();
     }
     public ArrayList<Monster> getMonsters() {
         return monsters;
@@ -119,6 +122,14 @@ public class Room extends Entity
 
     public void setIsFinalForestRoom(boolean isFinalForestRoom) {
         this.isFinalForestRoom = isFinalForestRoom;
+    }
+
+    public ArrayList<Flower> getFlowers() {
+        return flowers;
+    }
+
+    public void setFlowers(ArrayList<Flower> flowers) {
+        this.flowers = flowers;
     }
     
     public void addConnecting(String[] connectors)

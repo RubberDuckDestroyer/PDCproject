@@ -19,8 +19,23 @@ public class Dragon extends Monster
     public Dragon(String description, String name, int damage, int flowerChange, double probAppear, int health) {
         super(description, name, health, damage, flowerChange, probAppear);
     }
-
     
+    @Override
+    protected int defendAttack(Princess player)
+    {
+        int playerDamage = player.getCurrentSword().getDragonDamage();
+        this.setHealth(this.getHealth() - playerDamage);
+        return playerDamage;
+    }
+    
+    
+    public void dragonDefeated()
+    {
+        if(this.isDefeated)
+        {
+            //Method for turning into cat.
+        }
+    }
     //class methods
     @Override
     public int IncreaseFlower(int flowerDrop, Princess player) 

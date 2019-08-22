@@ -5,6 +5,8 @@
  */
 package entities;
 
+import java.util.Random;
+
 /**
  *
  * @author Patricia Virgen and Hitarth Asrani 
@@ -32,4 +34,15 @@ public abstract class Entity
         this.description = description;
     }
     
+    protected int getRandom(int x, int y)
+    {
+        return (new Random().nextInt(y-x)+x);
+    }
+    
+    @Override
+    public String toString()
+    {
+        String out = id;
+        return out;
+    }
 }
