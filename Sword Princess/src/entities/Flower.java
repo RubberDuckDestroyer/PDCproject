@@ -6,12 +6,11 @@
 package entities;
 
 /**
- *
- * @author hitar
+ * @author Patricia Virgen and Hitarth Asrani
  */
 public class Flower extends Entity
 {
-    private static final int FLOWER_HEALTH_RESTORED = 10;
+    private static final int FLOWER_HEALTH_RESTORED = 1;
     private int healthRestored;
     private boolean isPickedUp;
     public int getHealthRestored() {

@@ -7,7 +7,7 @@ package gamemap;
 import entities.Entity;
 /**
  *
- * @author hitar
+ * @author Patricia Virgen and Hitarth Asrani
  */
 public class Gamemap extends Entity {
     

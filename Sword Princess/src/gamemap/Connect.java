@@ -29,7 +29,6 @@ public enum Connect
     
     public static Connect readLine(String line)
     {
-        System.out.println("Value of "+ line + " is :" + Connect.valueOf(line));
         return Connect.valueOf(line);
     }
 }

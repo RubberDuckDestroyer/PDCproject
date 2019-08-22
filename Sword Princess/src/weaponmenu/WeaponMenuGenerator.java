@@ -7,7 +7,7 @@ package weaponmenu;
 
 /**
  *
- * @author hitar
+ * @author Patricia Virgen and Hitarth Asrani
  */
 
 import java.io.*;
@@ -18,7 +18,7 @@ public class WeaponMenuGenerator
 {
     private static final String weapondatapath = "Data\\weaponmenu.txt";
     private static WeaponMenu menu;
-    private static final boolean outputToConsole = true;
+    private static final boolean outputToConsole = false;
       
         // Logger
         private static void log(String text)

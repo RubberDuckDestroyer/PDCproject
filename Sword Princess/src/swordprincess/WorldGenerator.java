@@ -22,7 +22,7 @@ import weaponmenu.WeaponMenuGenerator;
 public class WorldGenerator 
 {
     private static final String worldDataPath = "Data\\worlddata.txt";
-    private static final boolean outputToConsole = true;
+    private static final boolean outputToConsole = false;
     private static Gamemap generatedWorld;
 
     // Enum for world data tags used.
@@ -73,17 +73,23 @@ public class WorldGenerator
             
             int currentForest = 0;       
             boolean loadingForestcomplete = false;
+            
+            for(int i=0;i<numberOfForests;i++)
+            {
+                forests[i] = new Forest("Forest " + i);
+            }
             do
             {
                 String line = fileReader.hasNext()?fileReader.nextLine():"";
                 log(line);
                 WorldDataTag tag = WorldDataTag.readLine(line);
-                forests[currentForest] = new Forest("Forest");
+                
                 switch(tag)
                 {
                     case rooms:
                         log("case rooms!");
                         int numberOfRooms = new Integer(fileReader.nextLine());
+                        forests[currentForest].setNumberOfRooms(numberOfRooms);
                         Room[] rooms = new Room[numberOfRooms];
                         rooms = WorldGenerator.generateRoom(fileReader, numberOfRooms, currentForest);
                         forests[currentForest].setRooms(rooms);
@@ -116,10 +122,14 @@ public class WorldGenerator
             Room[] rooms = new Room[numberOfRooms];
             int currentRoom = 0;
             boolean loadingRoomsCompleted = false;
+            for(int i =0;i<numberOfRooms;i++)
+            {
+                rooms[i] = new Room( ("room "+(currentRoom+1)) );
+            }
             do{
                 String line = fileReader.hasNext()?fileReader.nextLine():"";
                 WorldDataTag tag = WorldDataTag.readLine(line);
-                rooms[currentRoom] = new Room( ("room "+(currentRoom+1)) );
+                
                 switch(tag)
                 {
                     case start:
@@ -128,7 +138,7 @@ public class WorldGenerator
                     case desc:
                         String desc = fileReader.nextLine();			
 			log(desc);
-			rooms[currentRoom].setDescription(desc);
+			rooms[currentRoom].setRoomDescription(desc);
 			break;
                     case connect:
                         String[] text= (fileReader.nextLine().trim()).split(" ");

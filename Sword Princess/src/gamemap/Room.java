@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author hitar
+* @author Patricia Virgen and Hitarth Asrani
  */
 public class Room extends Entity
 {
@@ -23,7 +23,7 @@ public class Room extends Entity
     private Connect connectLeft;
     private Forest ownForest;
     private Forest nextForest;
-    private String description;
+    private String roomDescription;
     private boolean isStartRoom;
     private boolean isFinalGameRoom;
     private boolean isFinalForestRoom;
@@ -38,7 +38,7 @@ public class Room extends Entity
         this.connecting = new ArrayList<Connect>();
         this.connectLeft = null;
         this.connectRight = null;
-        this.description = "";
+        this.roomDescription = "";
         this.numberOfFlowers = 0;
     }
     public ArrayList<Monster> getMonsters() {
@@ -89,12 +89,12 @@ public class Room extends Entity
         this.nextForest = nextForest;
     }
 
-    public String getDescription() {
-        return description;
+    public String getRoomDescription() {
+        return roomDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setRoomDescription(String roomDescription) {
+        this.roomDescription = roomDescription;
     }
 
     public boolean isIsStartRoom() {
@@ -129,11 +129,10 @@ public class Room extends Entity
     
     public void addConnecting(String[] connectors)
     {
-        System.out.println("gamemap.Room.addConnecting(): Connectors:"+ connectors[0]+ " Length"+ connectors.length);
         for(int i =0;i<connectors.length;i++)
         {
             Connect c = Connect.readLine(connectors[i]);
-            System.out.println("Connect c"+ c);
+           
             this.connecting.add(c);         
         }
         
@@ -154,18 +153,26 @@ public class Room extends Entity
     
     public Monster getMonster()
     {
-        return this.monsters.get(0);
+        if(this.monsters.size() != 0)
+        {
+            return this.monsters.get(0);
+        }
+        else
+        {
+            return null;
+        }
     }
     
     public void printConnectingRooms()
     {
+       
         if(this.connectLeft != null)
         {
-            System.out.println("A Room lies on the left.");
+            System.out.println(" Room "+connectLeft+" lies on the left.");
         }
         if(this.connectRight != null)
         {
-            System.out.println("A Room lies on the right.");
+            System.out.println(" Room"+ connectRight +"lies on the right.");
         }
         if(this.connecting != null)
         {
@@ -193,7 +200,7 @@ public class Room extends Entity
                out = "The previous room is: room"+ previousRoom+". ";
                if(nextRoom == Connect.forest)
                {
-                    out+="A forest lies ahed, type \'connect forest\' to move to the next level. You cannot turn back once you switch forests.";
+                    out+="A forest lies ahed, type \'room forest\' to move to the next level. You cannot turn back once you switch forests.";
                 }
                 else
                 {

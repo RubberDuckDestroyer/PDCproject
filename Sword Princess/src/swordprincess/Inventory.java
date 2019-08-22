@@ -11,7 +11,7 @@ import static java.lang.System.in;
 import java.util.ArrayList;
 
 /**
- *
+ * This class is the player inventory class for the player.
  * @author hitar
  */
 public class Inventory {

@@ -29,12 +29,14 @@ public class Dragon extends Monster
     }
     
     
-    public void dragonDefeated()
+    public boolean dragonDefeated()
     {
         if(this.isDefeated)
         {
             System.out.println("Congratulations, you defeated the dragon and it turned into a pet cat. Sword Princess can now go home with her pet cat!");
         }
+        
+        return false;
     }
     //class methods
     @Override

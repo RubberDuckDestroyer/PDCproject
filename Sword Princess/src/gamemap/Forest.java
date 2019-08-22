@@ -9,7 +9,7 @@ import entities.Entity;
 
 /**
  *
- * @author hitar
+ * @author Patricia Virgen and Hitarth Asrani
  */
 public class Forest extends Entity
 {

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author hitar
+ * @author Patricia Virgen and Hitarth Asrani
  */
 public class WeaponMenu 
 {
@@ -45,7 +45,7 @@ public class WeaponMenu
         this.swordCost = swordCost;
     }
     
-    public void printWeaponMenu()
+    public void printWeaponMenu(int numberOfFlowers)
     {
         int length = swordCost.size();
         if(length == swordList.size())
@@ -56,8 +56,11 @@ public class WeaponMenu
                 Sword sword = this.swordList.get(i);
                 int cost = this.swordCost.get(i);
                 System.out.println( sword +" : "+ cost +" flowers. Bought: " +sword.isIsPurchased());
-                System.out.println("Description: "+ sword.getDescription());
+                System.out.println("Description: "+ sword.getRoomDescription());
             }
+            System.out.println("--------------");
+            System.out.println("To buy a sword, type \'buy <swordname>\', for example \'buy fire\' to buy the fire sword. Current number of flowers: "+ numberOfFlowers);
+            System.out.println("To equip a sword, type equip followed by the sword name");
         }
             
     }
@@ -65,11 +68,40 @@ public class WeaponMenu
     public Sword getDefaultSword()
     {
         return swordList.get(0);
-        
     }
     
-    public void buyWeapon(int weaponNumber)
+    public int buyWeapon(int weaponNumber)
     {
         
+        Sword swordToBuy = swordList.get(weaponNumber);
+        int cost =swordCost.get(weaponNumber);
+        if(!swordToBuy.isIsPurchased())
+        {
+            swordToBuy.setIsPurchased(true);
+        }
+        else
+        {
+            System.out.println("Sword already bought!");
+            cost = 0;
+        }
+        
+        return cost;
+    }
+    
+    // Returns sword of choice
+    public Sword getSword(int num)
+    {
+        Sword s = this.swordList.get(num);
+        
+        if(s.isIsPurchased())
+        {
+            System.out.println("Switching to "+ s);
+        }
+        else{
+            System.out.println("You have not bought that sword yet!! Shifting to default sword");
+            s = getDefaultSword();
+        }
+        
+        return s;
     }
 }

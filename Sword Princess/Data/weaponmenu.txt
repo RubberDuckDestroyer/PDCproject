@@ -1,7 +1,7 @@
 $swords
 5
 $defaultsword
-25 25 5 0
+15 15 0 0
 $firesword
 35 35 2 20
 $watersword
@@ -9,4 +9,4 @@ $watersword
 $dualsword
 50 19 7 50
 $dragonsword
-15 70 7 80
+5 70 7 80

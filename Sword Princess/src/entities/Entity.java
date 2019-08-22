@@ -26,11 +26,11 @@ public abstract class Entity
         return id;
     }
 
-    public String getDescription() {
+    public String getRoomDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setRoomDescriptiontion(String description) {
         this.description = description;
     }
     

@@ -5,7 +5,9 @@ $rooms
 4
 $start
 $desc
-The lush green forest is alive, with birds chriping and the river flowing...A field of flowers lies ahead, "I should pick the folwers", says the princess in her head.
+The lush green forest is alive, with birds chriping and the river flowing...A field of flowers lies ahead, "I should pick the folwers", says the princess in her head. Type help for commands!
+$flowers
+100
 $connect
 two
 $dash
@@ -16,21 +18,21 @@ one four
 $connectr
 three
 $monster
-golem 35 5 0.9 7
+golem 40 5 0.9 7
 $dash
 $desc
 A lot of bushes lay ahead... 
 $connectl
 two
 $monster
-golem 35 5 0.98 7
+golem 45 5 0.98 7
 $dash
 $desc
 A bridge can be seen in the distance...
 $connect
 forest
 $monster
-golem 35 5 0.8 7
+golem 55 5 0.8 7
 $dash
 $end
 $rooms
